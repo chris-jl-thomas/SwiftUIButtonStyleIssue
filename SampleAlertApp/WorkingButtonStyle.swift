@@ -10,23 +10,15 @@ struct WorkingButtonStyle: ButtonStyle {
         
         let configuration: Configuration
         
-        var label: some View {
-            configuration.label
-                .frame(maxWidth: .infinity)
-                .padding()
-        }
-        
         var body: some View {
+            print("working button", configuration.isPressed)
             if configuration.isPressed {
-                return label
-                    .foregroundColor(Color.black)
-                    .background(Color.gray)
+                return configuration.label
+                    .foregroundColor(Color.blue)
             } else {
-                return label
-                    .foregroundColor(Color.white)
-                    .background(Color.green)
+                return configuration.label
+                    .foregroundColor(Color.red)
             }
-            
         }
     }
     

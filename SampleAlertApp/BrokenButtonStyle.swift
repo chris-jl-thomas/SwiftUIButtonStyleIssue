@@ -9,23 +9,16 @@ struct BrokenButtonStyle: ButtonStyle {
     struct Content: View {
         
         let configuration: Configuration
-    
-        var label: some View {
-            configuration.label
-                .frame(maxWidth: .infinity)
-                .padding()
-        }
         
         var body: some View {
+            print("broken button", configuration.isPressed)
             return Group {
                 if configuration.isPressed {
-                    label
-                        .foregroundColor(Color.black)
-                        .background(Color.gray)
+                    configuration.label
+                        .foregroundColor(Color.blue)
                 } else {
-                    label
-                        .foregroundColor(Color.white)
-                        .background(Color.green)
+                    configuration.label
+                        .foregroundColor(Color.red)
                 }
             }
         }

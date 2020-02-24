@@ -8,12 +8,15 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Group {
+        VStack(spacing: 8) {
             Button(action: {}) {
-                Text("This is a Primary Button")
+                Text("This is a Broken Button")
             }
             .buttonStyle(BrokenButtonStyle())
-//            .buttonStyle(WorkingButtonStyle())
+            Button(action: {}) {
+                Text("This is a Working Button")
+            }
+            .buttonStyle(WorkingButtonStyle())
         }
     }
 }
